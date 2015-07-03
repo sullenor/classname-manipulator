@@ -1,0 +1,33 @@
+{
+  "name": "classname-manipulator",
+  "version": "1.0.0",
+  "description": "classname-manipulator",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^2.2.5"
+  },
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sullenor/classname-manipulator.git"
+  },
+  "keywords": [
+    "className",
+    "react"
+  ],
+  "author": {
+    "name": "Alexey Litvinov",
+    "email": "iamhoneyboy@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sullenor/classname-manipulator/issues"
+  },
+  "homepage": "https://github.com/sullenor/classname-manipulator"
+}
