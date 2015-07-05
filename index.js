@@ -4,7 +4,7 @@ var c = require('./const');
 
 /**
  * @param  {object} props
- * @param  {object} styles
+ * @param  {object} [styles]
  * @return {string}
  */
 module.exports = function (props, styles) {
@@ -15,20 +15,26 @@ module.exports = function (props, styles) {
 
   var classes = [className];
   var mods = props[c.MODIFIER];
+
   for (var m in mods) {
     if (!mods[m]) {
       continue;
     }
 
-    classes.push(prefix + '-' + m + (typeof mods[m] !== 'boolean'
-      ? '-' + mods[m]
-      : ''));
+    var name = prefix + '-' + m;
+    if (typeof mods[m] !== 'boolean') {
+      name += '-' + mods[m];
+    }
+
+    classes.push(name);
   }
 
-  classes = classes.reduce(function (names, name) {
-    styles[name] && names.push(styles[name]);
-    return names;
-  }, []);
+  if (styles) {
+    classes = classes.reduce(function (names, name) {
+      styles[name] && names.push(styles[name]);
+      return names;
+    }, []);
+  }
 
   return classes.join(' ');
 };
