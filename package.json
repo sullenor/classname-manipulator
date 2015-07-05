@@ -8,10 +8,13 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-mocha": "^2.1.2",
     "mocha": "^2.2.5"
   },
   "scripts": {
-    "test": "mocha test"
+    "bdd": "gulp gaze",
+    "test": "mocha --ui bdd --reporter spec test"
   },
   "repository": {
     "type": "git",
