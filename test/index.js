@@ -39,6 +39,35 @@ describe('classname-manipulator', function () {
 
       assert.equal(cm(props), 'button button--action button--size-m');
     });
+
+    it('input__placeholder', function () {
+      var props = {
+        className: 'input',
+        childName: 'placeholder'
+      };
+
+      assert.equal(cm(props), 'input__placeholder');
+    });
+
+    it('input__placeholder input__placeholder-empty', function () {
+      var props = {
+        className: 'input',
+        childName: 'placeholder',
+        theme: {empty: true}
+      };
+
+      assert.equal(cm(props), 'input__placeholder input__placeholder-empty');
+    });
+
+    it('input__placeholder input__placeholder-size-m', function () {
+      var props = {
+        className: 'input',
+        childName: 'placeholder',
+        theme: {size: 'm'}
+      };
+
+      assert.equal(cm(props), 'input__placeholder input__placeholder-size-m');
+    });
   });
 
   describe('Testing the "styles" argument transformation', function () {
