@@ -13,7 +13,7 @@ module.exports = function (props, styles) {
     ? className + '__' + props[c.ELEMENT]
     : className + '-';
 
-  var classes = [className];
+  var classes = [props[c.ELEMENT] ? prefix : className];
   var mods = props[c.MODIFIER];
 
   for (var m in mods) {
